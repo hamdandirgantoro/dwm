@@ -64,6 +64,8 @@ static const char *slockcmd[]  = { "slock", NULL };
 static const char *mutecmd[]  = { "wpctl", "set-mute", "@DEFAULT_SINK@", "toggle", NULL };
 static const char *incvolcmd[]  = { "wpctl", "set-volume", "@DEFAULT_SINK@", "5%+", NULL };
 static const char *decvolcmd[]  = { "wpctl", "set-volume", "@DEFAULT_SINK@", "5%-", NULL };
+static const char *incbricmd[]  = { "brightnessctl", "s", "5%+", NULL };
+static const char *decbricmd[]  = { "brightnessctl", "s", "5%-", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -104,6 +106,10 @@ static const Key keys[] = {
 	{ 0,             XF86XK_AudioMute,	   spawn,          	{.v = mutecmd} },
 	{ 0,             XF86XK_AudioRaiseVolume,	   spawn,          	{.v = incvolcmd} },
 	{ 0,             XF86XK_AudioLowerVolume,	   spawn,          	{.v = decvolcmd} },
+	{ 0,             XF86XK_AudioLowerVolume,	   spawn,          	{.v = decvolcmd} },
+	{ 0,             XF86XK_AudioLowerVolume,	   spawn,          	{.v = decvolcmd} },
+	{ 0,             XF86XK_MonBrightnessUp,	   spawn,          	{.v = incbricmd} },
+	{ 0,             XF86XK_MonBrightnessDown,	   spawn,          	{.v = decbricmd} },
 };
 
 /* button definitions */
